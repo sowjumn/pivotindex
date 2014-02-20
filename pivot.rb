@@ -1,6 +1,5 @@
 class Pivot
   def pivot_index(list)
-    final_index = 0
     alength = list.length
     return alength-1 if alength < 2
 
