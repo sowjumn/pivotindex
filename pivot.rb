@@ -1,15 +1,20 @@
 class Pivot
   def pivot_index(list)
     alength = list.length
-    return alength-1 if alength < 2
+    index = -1
 
-    (1..alength-1).each do |index|
-      sum_left = sum(list[0..index-1])
-      sum_right = sum(list[index+1..alength])
-      return index if sum_left == sum_right
+    return index if (alength < 3) 
+
+    sum_left = list[0]
+    sum_right = sum(list[2..alength-1])
+
+    (2..alength-1).each do |ind|
+      return ind-1 if sum_left == sum_right
+      sum_left = sum_left + list[ind-1]
+      sum_right = sum_right - list[ind]
     end
 
-    -1
+    index
   end
 
   def sum(list)

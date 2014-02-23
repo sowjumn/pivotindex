@@ -18,10 +18,14 @@ describe Pivot do
     end
 
     it "should return 0 when  the array is [3]" do
-      pivot.pivot_index([3]).should == 0
+      pivot.pivot_index([3]).should == -1
     end
 
     it "should return -1 when the array is empty" do
+      pivot.pivot_index([]).should == -1
+    end
+
+    it "should return -1 when the array has only 2 elements" do
       pivot.pivot_index([]).should == -1
     end
 
