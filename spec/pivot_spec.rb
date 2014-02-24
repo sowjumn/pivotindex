@@ -26,7 +26,7 @@ describe Pivot do
     end
 
     it "should return -1 when the array has only 2 elements" do
-      pivot.pivot_index([]).should == -1
+      pivot.pivot_index([1,5]).should == -1
     end
 
     it "should return the first pivot when there are multiple pivots [5,2,0,0,3,4]" do
